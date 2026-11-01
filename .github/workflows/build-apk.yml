@@ -12,6 +12,8 @@ jobs:
         run: |
           unzip -q NikoSMS-source.zip -d extracted
           cp -a extracted/NikoSMS/. .
+      - name: Apply sending safety safeguards
+        run: python3 safety_patch.py
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
